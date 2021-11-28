@@ -77,13 +77,4 @@ class MainController extends Controller
         ]);
     }
 
-    public function withdraw()
-    {
-        session_write_close();
-        $withdrawFormModel = new WithdrawForm();
-        $withdrawFormModel->loadParams($this->getParams());
-        if ($withdrawFormModel->withdraw($this->user)) {
-            header('Location: /user/profile');
-        }
-    }
 }
